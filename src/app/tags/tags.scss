@@ -1,0 +1,27 @@
+.tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+
+    a {
+        text-decoration: none;
+        background: #fff0f0;
+        color: #e72929;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: #e72929;
+            color: white;
+            border-color: #e72929;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(231, 41, 41, 0.25);
+        }
+    }
+}
