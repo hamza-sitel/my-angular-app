@@ -1,35 +1,50 @@
-<div class="container">
+<app-not-found 
+[visible]="!food" notFoundMessage="Product Not Found!"
+resetLinkText="Back To Home Page"
+>
+</app-not-found>
+<div *ngIf="food" class="container">
     <img [src]="food.imageUrl" alt="{{food.name}}">
     <div class="datails">
         <div class="header">
             <span class="name">
                 {{food.name}}
             </span>
-            <span class="favorite not" >
+            <span class="favorite not">
                 🤍
             </span>
         </div>
         <div class="rating">
             <div class="stars">
-                    <ng-container *ngFor="let i of [1,2,3,4,5]">
-                        <span>
-                            {{ i <= food.stars ? '★' : '☆' }}
-                        </span>
-                    </ng-container>
+                <ng-container *ngFor="let i of [1,2,3,4,5]">
+                    <span>
+                        {{ i <= food.stars ? '★' : '☆' }} </span>
+                </ng-container>
 
-                     <span>
-                        ({{ food.stars }})
+                <span>
+                    ({{ food.stars }})
 
-                     </span>
-                </div>
+                </span>
+            </div>
         </div>
-         <div class="origins">
+        <div class="origins">
             <span *ngFor="let origin of food.origins"> {{origin}}</span>
- 
-    </div>
 
-    <div class="tags">
-        <app-tags></app-tags>
+        </div>
+
+        <div class="tags">
+            <app-tags [foodPageTags]="food.tags"></app-tags>
+        </div>
+        <div class="cook-time">
+            <span>
+                Time to cook about <strong>{{food.cookTime}}</strong>
+            </span>
+        </div>
+        <div class="price">
+            <span>{{food.price| currency}} <span
+                    style="color:rgba(7, 177, 126, 0.667); font-weight: 500; font-size:30px;">price</span> </span>
+        </div>
+        <button (click)="addToCart()">Add To Cart </button>
+
+
     </div>
-    
-</div>

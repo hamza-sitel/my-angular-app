@@ -1,0 +1,9 @@
+<div *ngIf="visible" class="not-found">
+    <div class="content">
+        <p class="title">{{ notFoundMessage }}</p>
+
+        <a [routerLink]="resetLinkRoute" class="link">
+            {{ resetLinkText }}
+        </a>
+    </div>
+</div>
